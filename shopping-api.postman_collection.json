@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "cc0afe9a-1dd5-4061-ae16-33b0a62e2eeb",
+		"name": "shopping-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear Clientes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"documentNumber\": \"334343439090\",\n    \"fullName\": \"Edwin De Los Santos\",\n    \"creditLimit\": \"6000.00\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Cliente por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Productos al Carrito",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"orderNumber\" : \"479\",\n\"idCustomer\" : \"3\",\n\"orderDate\" : \"2020-01-01\",\n\"orderAmount\" : 200,\n\"isCredit\" : true,\n\"active\": true,\n\n \"shoppingCartItems\": [\n      \n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/shoppings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"shoppings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener articulos del carrito de compra por customer ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/shoppings/2/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"shoppings",
+						"2",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todo los productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Articulo Cart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"orderNumber\" : \"479\",\n\"idCustomer\" : \"3\",\n\"orderDate\" : \"2020-01-01\",\n\"orderAmount\" : 200,\n\"isCredit\" : true,\n\"active\": true,\n\n \"shoppingCartItems\": [\n      {\n      \t\"idOrder\" : 13,\n\t\t\"row\" : \"2\",\n\t\t\"idProduct\" : 2,\n\t\t\"description\" : \"Comprando dinamico\",\n\t\t\"qty\" : 2,\n\t\t\"price\" : 100,\n\t\t\"total\" : 0\n      },\n       {\n      \t\"idOrder\" : 13,\n\t\t\"row\" : \"2\",\n\t\t\"idProduct\" : 2,\n\t\t\"description\" : \"Comprando dinaeremico\",\n\t\t\"qty\" : 2,\n\t\t\"price\" : 100,\n\t\t\"total\" : 0\n      }\n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/shoppings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"shoppings"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
